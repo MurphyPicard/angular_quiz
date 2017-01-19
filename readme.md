@@ -14,7 +14,10 @@ Instantiate a new Angular module called `BlogPost` that takes `ui.router` as a d
 
 **Your answer:**
 ```js
-
+(function(){
+  angular
+    .module('Blogpost', ['ui.router']);
+})();
 ```
 
 ## Question 2
@@ -30,7 +33,7 @@ Which *one* of the following buttons would *not* be displayed?
 ```html
 [ ] A: <button data-ng-if="status">Click</button>
 [ ] B: <button data-ng-show="status">Click</button>
-[ ] C: <button data-ng-hide="status">Click</button>
+[x] C: <button data-ng-hide="status">Click</button>
 [ ] D: <button>{{status}}</button>
 ```
 
@@ -45,7 +48,8 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 
 **Your answer:**
 
-> ...
+> data-ng-click is only for elements within a form submitting data,
+> while ng-click can be used in more places
 
 ## Question 4
 
@@ -53,7 +57,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 
 **Your answer:**
 
-> ...
+> 'A', bacause if you put it in the html tags then the whole file can use angular
 
 ### A:
 ```html
@@ -72,7 +76,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 ### B:
 ```html
 <!DOCTYPE html>
-<html> 
+<html>
   <head data-ng-app="myapp">
     <title>My app</title>
   </head>
@@ -86,7 +90,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 ### C:
 ```html
 <!DOCTYPE html>
-<html> 
+<html>
   <head>
     <title>My app</title>
   </head>
@@ -106,7 +110,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -116,7 +120,7 @@ What is an IIFE, and why might you use it?
 
 **Your answer:**
 
-> ...
+> Immediately invoking function expression, and you use it in your module and controller so you can use angular immediately in your files.
 
 ## Question 7
 
@@ -124,7 +128,7 @@ What is the `ui-sref` directive, and how is it used?
 
 **Your answer:**
 
-> ...
+> google told me that it's a directive that binds a link to a state and if the state has a url the directive will generate and update the href
 
 ## Question 8
 
@@ -132,7 +136,7 @@ One of the lines of code in the following snippet will throw an error. Which one
 
 **Your answer:**
 
-> ...
+> Trick question, this runs perfectly.  I would have written var i myself but it runs fine as is.
 
 ```js
 /*1*/ "use strict";
@@ -151,7 +155,8 @@ Custom directives can be embedded in HTML four different ways. Demonstrate **two
 
 **Your answer:**
 ```html
-
+<input my-directive="hello" type="text" name="" value="">
+i'm not sure about the other ways to be honest
 ```
 
 ## Question 10
@@ -160,7 +165,7 @@ Of the three following options, which is the most "correct" way of organizing th
 
 **Your answer:**
 
-> ...
+> C because the html and js files are separated first, then it is further separated after that
 
 
 ### A:
@@ -212,4 +217,3 @@ Of the three following options, which is the most "correct" way of organizing th
   songs/
     form.html
 ```
-
